@@ -21,6 +21,15 @@ import routerBindings, {
 import dataProvider from "@refinedev/simple-rest";
 import axios, { AxiosRequestConfig } from "axios";
 import { CredentialResponse } from "interfaces/google";
+
+import {
+  AccountCircleOutlined,
+  ChatBubbleOutline,
+  PeopleAltOutlined,
+  StarOutlineRounded,
+  VillaOutlined,
+} from "@mui/icons-material";
+
 import {
   BlogPostCreate,
   BlogPostEdit,
@@ -145,23 +154,28 @@ function App() {
               {
                 name: "Property",
                 list: "/Property",
+                icon: <VillaOutlined />,
               },
               {
                 name: "agent",
                 list: "/agent",
+                icon: <PeopleAltOutlined />,
               },
               {
                 name: "review",
                 list: "/review",
+                icon: <StarOutlineRounded />,
               },
               {
                 name: "message",
                 list: "/message",
+                icon: <ChatBubbleOutline />,
               },
               {
                 name: "my-profile",
                 options: { label: "My Profile" },
                 list: "/my-profile",
+                icon: <AccountCircleOutlined />,
               },
             ]}
             options={{
