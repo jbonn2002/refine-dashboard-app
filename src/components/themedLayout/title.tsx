@@ -17,7 +17,7 @@ export const ThemedTitleV2: React.FC<RefineLayoutThemedTitleProps> = ({
 
   return (
     <MuiLink
-      to="/"
+      to="/Home"
       component={ActiveLink}
       underline="none"
       sx={{
