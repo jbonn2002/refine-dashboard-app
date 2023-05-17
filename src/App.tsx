@@ -154,7 +154,7 @@ function App() {
             resources={[
               {
                 name: "DashboardPage",
-                list: "/Home",
+                list: "/",
                 options: { label: "Dashboard" },
                 icon: <Dashboard />,
               },
@@ -204,7 +204,7 @@ function App() {
                   </Authenticated>
                 }
               >
-                <Route path="Home">
+                <Route path="/">
                   <Route index element={<Home />} />
                   <Route path="create" element={<Home />} />
                 </Route>
