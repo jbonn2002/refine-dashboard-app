@@ -19,6 +19,7 @@ import routerBindings, {
   UnsavedChangesNotifier,
 } from "@refinedev/react-router-v6";
 import dataProvider from "@refinedev/simple-rest";
+import routerProvider from "@refinedev/react-router-v6";
 import axios, { AxiosRequestConfig } from "axios";
 import { CredentialResponse } from "interfaces/google";
 
@@ -28,24 +29,24 @@ import {
   PeopleAltOutlined,
   StarOutlineRounded,
   VillaOutlined,
+  Dashboard,
 } from "@mui/icons-material";
 
-import {
-  BlogPostCreate,
-  BlogPostEdit,
-  BlogPostList,
-  BlogPostShow,
-} from "pages/blog-posts";
-import {
-  CategoryCreate,
-  CategoryEdit,
-  CategoryList,
-  CategoryShow,
-} from "pages/categories";
-import { Login } from "pages/login";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { parseJwt } from "utils/parse-jwt";
 import { ColorModeContextProvider } from "./contexts/color-mode";
+
+import {
+  Login,
+  Home,
+  Agents,
+  MyProfile,
+  PropertyDetails,
+  AllProperties,
+  CreateProperty,
+  AgentProfile,
+  EditProperty,
+} from "pages";
 
 const axiosInstance = axios.create();
 axiosInstance.interceptors.request.use((request: AxiosRequestConfig) => {
@@ -146,11 +147,17 @@ function App() {
         <GlobalStyles styles={{ html: { WebkitFontSmoothing: "auto" } }} />
         <RefineSnackbarProvider>
           <Refine
-            dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
+            dataProvider={dataProvider("")}
             notificationProvider={notificationProvider}
-            routerProvider={routerBindings}
+            routerProvider={routerProvider}
             authProvider={authProvider}
             resources={[
+              {
+                name: "DashboardPage",
+                list: "/Home",
+                options: { label: "Dashboard" },
+                icon: <Dashboard />,
+              },
               {
                 name: "Property",
                 list: "/Property",
@@ -201,18 +208,16 @@ function App() {
                   index
                   element={<NavigateToResource resource="blog_posts" />}
                 />
-                <Route path="/blog-posts">
-                  <Route index element={<BlogPostList />} />
-                  <Route path="create" element={<BlogPostCreate />} />
-                  <Route path="edit/:id" element={<BlogPostEdit />} />
-                  <Route path="show/:id" element={<BlogPostShow />} />
+                <Route path="Home">
+                  <Route index element={<Home />} />
+                  <Route path="create" element={<Home />} />
                 </Route>
-                <Route path="/categories">
+                {/* <Route path="/categories">
                   <Route index element={<CategoryList />} />
                   <Route path="create" element={<CategoryCreate />} />
                   <Route path="edit/:id" element={<CategoryEdit />} />
                   <Route path="show/:id" element={<CategoryShow />} />
-                </Route>
+                </Route> */}
                 <Route path="*" element={<ErrorComponent />} />
               </Route>
               <Route

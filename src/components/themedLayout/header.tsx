@@ -41,6 +41,7 @@ export const ThemedHeaderV2: React.FC<RefineThemedLayoutV2HeaderProps> = ({
             <Typography
               sx={{
                 display: { xs: "none", md: "block" },
+                color: "#808191",
               }}
               variant="subtitle2"
             >

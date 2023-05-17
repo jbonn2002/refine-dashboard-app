@@ -280,7 +280,7 @@ export const ThemedSiderV2: React.FC<RefineThemedLayoutV2SiderProps> = ({
               minWidth: "24px",
               transition: "margin-right 0.3s",
               marginRight: drawerSiderVisible ? "12px" : "0px",
-              color: "currentColor",
+              color: "#808191",
               fontSize: "14px",
             }}
           >
