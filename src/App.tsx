@@ -5,9 +5,9 @@ import {
   ErrorComponent,
   notificationProvider,
   RefineSnackbarProvider,
-  ThemedLayoutV2,
 } from "@refinedev/mui";
 
+import { ThemedLayoutV2 } from "components/themedLayout";
 import { ThemedHeaderV2 } from "components/themedLayout/header";
 import { ThemedSiderV2 } from "components/themedLayout/sider";
 import { ThemedTitleV2 } from "components/themedLayout/title";
@@ -204,14 +204,14 @@ function App() {
                   </Authenticated>
                 }
               >
-                <Route
-                  index
-                  element={<NavigateToResource resource="blog_posts" />}
-                />
                 <Route path="Home">
                   <Route index element={<Home />} />
                   <Route path="create" element={<Home />} />
                 </Route>
+                <Route
+                  index
+                  element={<NavigateToResource resource="blog_posts" />}
+                />
                 {/* <Route path="/categories">
                   <Route index element={<CategoryList />} />
                   <Route path="create" element={<CategoryCreate />} />
