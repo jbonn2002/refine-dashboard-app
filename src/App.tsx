@@ -160,12 +160,16 @@ function App() {
               },
               {
                 name: "Property",
-                list: "/Property",
+                list: AllProperties,
+                show: PropertyDetails,
+                create: CreateProperty,
+                edit: EditProperty,
                 icon: <VillaOutlined />,
               },
               {
-                name: "agent",
-                list: "/agent",
+                name: "Agents",
+                list: Agents,
+                show: AgentProfile,
                 icon: <PeopleAltOutlined />,
               },
               {
@@ -181,7 +185,7 @@ function App() {
               {
                 name: "my-profile",
                 options: { label: "My Profile" },
-                list: "/my-profile",
+                list: MyProfile,
                 icon: <AccountCircleOutlined />,
               },
             ]}
@@ -205,6 +209,26 @@ function App() {
                 }
               >
                 <Route path="/">
+                  <Route index element={<Home />} />
+                  <Route path="create" element={<Home />} />
+                </Route>
+                <Route path="/Property">
+                  <Route index element={<AllProperties />} />
+                  <Route path="create" element={<AllProperties />} />
+                </Route>
+                <Route path="/Agents">
+                  <Route index element={<AgentProfile />} />
+                  <Route path="create" element={<AgentProfile />} />
+                </Route>
+                <Route path="/my-profile">
+                  <Route index element={<MyProfile />} />
+                  <Route path="create" element={<MyProfile />} />
+                </Route>
+                <Route path="/review">
+                  <Route index element={<Home />} />
+                  <Route path="create" element={<Home />} />
+                </Route>
+                <Route path="/message">
                   <Route index element={<Home />} />
                   <Route path="create" element={<Home />} />
                 </Route>
