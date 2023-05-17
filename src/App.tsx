@@ -159,7 +159,7 @@ function App() {
                 icon: <Dashboard />,
               },
               {
-                name: "Property",
+                name: "Properties",
                 list: AllProperties,
                 show: PropertyDetails,
                 create: CreateProperty,
@@ -173,17 +173,17 @@ function App() {
                 icon: <PeopleAltOutlined />,
               },
               {
-                name: "review",
-                list: "/review",
+                name: "Reviews",
+                list: "/Reviews",
                 icon: <StarOutlineRounded />,
               },
               {
-                name: "message",
-                list: "/message",
+                name: "Messages",
+                list: "/Messages",
                 icon: <ChatBubbleOutline />,
               },
               {
-                name: "my-profile",
+                name: "My-profile",
                 options: { label: "My Profile" },
                 list: MyProfile,
                 icon: <AccountCircleOutlined />,
@@ -212,7 +212,7 @@ function App() {
                   <Route index element={<Home />} />
                   <Route path="create" element={<Home />} />
                 </Route>
-                <Route path="/Property">
+                <Route path="/Properties">
                   <Route index element={<AllProperties />} />
                   <Route path="create" element={<AllProperties />} />
                 </Route>
@@ -220,15 +220,15 @@ function App() {
                   <Route index element={<AgentProfile />} />
                   <Route path="create" element={<AgentProfile />} />
                 </Route>
-                <Route path="/my-profile">
+                <Route path="/My-profile">
                   <Route index element={<MyProfile />} />
                   <Route path="create" element={<MyProfile />} />
                 </Route>
-                <Route path="/review">
+                <Route path="/Reviews">
                   <Route index element={<Home />} />
                   <Route path="create" element={<Home />} />
                 </Route>
-                <Route path="/message">
+                <Route path="/Messages">
                   <Route index element={<Home />} />
                   <Route path="create" element={<Home />} />
                 </Route>
