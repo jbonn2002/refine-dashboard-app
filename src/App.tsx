@@ -311,7 +311,10 @@ function App() {
                 <Route path="/Properties">
                   <Route index element={<AllProperties />} />
                   <Route path="create" element={<CreateProperty />} />
-                  <Route path=":id" element={<PropertyDetails />} />
+                  <Route
+                    path="/Properties/show/:id"
+                    element={<PropertyDetails />}
+                  />
                 </Route>
                 <Route path="/Agents">
                   <Route index element={<AgentProfile />} />
