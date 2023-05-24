@@ -236,7 +236,7 @@ const PropertyDetails: React.FC = () => {
                 icon={!isCurrentUser ? <ChatBubble /> : <Edit />}
                 handleClick={() => {
                   if (isCurrentUser) {
-                    navigate(`/properties/edit/${propertyDetails._id}`);
+                    navigate(`/Properties/edit/${propertyDetails._id}`);
                   }
                 }}
               />

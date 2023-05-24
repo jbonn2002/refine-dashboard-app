@@ -260,6 +260,9 @@ function App() {
                 show: PropertyDetails,
                 create: CreateProperty,
                 edit: EditProperty,
+                meta: {
+                  canDelete: true,
+                },
                 icon: <VillaOutlined />,
               },
               {
@@ -315,10 +318,15 @@ function App() {
                     path="/Properties/show/:id"
                     element={<PropertyDetails />}
                   />
+                  <Route
+                    path="/Properties/edit/:id"
+                    element={<EditProperty />}
+                  />
                 </Route>
                 <Route path="/Agents">
-                  <Route index element={<AgentProfile />} />
+                  <Route index element={<Agents />} />
                   <Route path="create" element={<AgentProfile />} />
+                  <Route path="/Agents/show/:id" element={<AgentProfile />} />
                 </Route>
                 <Route path="/My-profile">
                   <Route index element={<MyProfile />} />
