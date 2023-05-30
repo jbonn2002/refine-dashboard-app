@@ -5,7 +5,7 @@ import { AgentCard } from "components";
 
 const Agents = () => {
   const { data, isLoading, isError } = useList({
-    resource: "Users",
+    resource: "users",
   });
 
   const allAgents = data?.data ?? [];
@@ -29,7 +29,7 @@ const Agents = () => {
       >
         {allAgents.map((agent) => (
           <AgentCard
-            key={agent.id}
+            key={agent._id}
             id={agent._id}
             name={agent.name}
             email={agent.email}

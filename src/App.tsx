@@ -284,7 +284,7 @@ function App() {
               {
                 name: "My-profile",
                 options: { label: "My Profile" },
-                list: MyProfile,
+                list: "/My-profile",
                 icon: <AccountCircleOutlined />,
               },
             ]}
@@ -330,7 +330,6 @@ function App() {
                 </Route>
                 <Route path="/My-profile">
                   <Route index element={<MyProfile />} />
-                  <Route path="create" element={<MyProfile />} />
                 </Route>
                 <Route path="/Reviews">
                   <Route index element={<Home />} />
